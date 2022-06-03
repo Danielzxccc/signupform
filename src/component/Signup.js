@@ -55,7 +55,7 @@ export default function Signup() {
           <form onSubmit={handleSignUp}>
             <h1>SIGN UP FORM</h1>
             <div className="input">
-            <label htmlFor="Firstname">Firstname:</label>
+              <label htmlFor="Firstname">Firstname:</label>
               <input type="text" required />
               <label htmlFor="LastName">Lastname:</label>
               <input type="text" required />
@@ -81,8 +81,8 @@ export default function Signup() {
               ) : (
                 <input type="password" required readOnly />
               )}
+              <button type="submit">Sign Up</button>
             </div>
-            <button type="submit">Sign Up</button>
           </form>
         </div>
       </div>
