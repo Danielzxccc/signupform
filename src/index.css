@@ -11,8 +11,21 @@ body{
   align-items: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.error{
+  height: 20px;
+  background-color: crimson;
+  color: white;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success{
+  color: green;
+  font-size: 25px;
+}
 .container{
-  height: 500px;
+  height: 550px;
   width: 600px;
   border: 1px solid black;
   border-radius: 20px;
@@ -35,6 +48,7 @@ body{
   flex-direction: column;
   justify-content: center;
 }
+
 .input input{
   height: 30px;
   border-radius: 2px;

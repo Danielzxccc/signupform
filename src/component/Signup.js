@@ -5,6 +5,7 @@ export default function Signup() {
   const [confirm, setConfirm] = useState("");
   const [passErrMsg, setPassErrMsg] = useState("");
   const [conErrMsg, setConErrMsg] = useState("");
+  const [check, setCheck] = useState("");
 
   const inputRef = useRef(null);
   const passRef = useRef(null);
@@ -13,8 +14,12 @@ export default function Signup() {
   useEffect(() => {
     if (validate === true) {
       setConErrMsg("");
+      if(password !== "" && confirm !== ""){
+        setCheck("✔");
+      }
     } else {
       setConErrMsg("Password does not match");
+      setCheck("");
     }
   }, [validate]);
 
@@ -61,16 +66,16 @@ export default function Signup() {
               <input type="text" required />
               <label htmlFor="Email">Email:</label>
               <input type="email" required />
-              <label htmlFor="Password">Password:</label>
-              {passErrMsg ? <p>{passErrMsg}</p> : ""}
+              <label htmlFor="Password">Password: <span className="success">{check}</span></label>
+              {passErrMsg ? <p className="error">{passErrMsg}</p> : ""}
               <input
                 type="password"
                 required
                 onChange={validatePassword}
                 ref={passRef}
               />
-              <label htmlFor="Confirm Password">Confirm Password:</label>
-              {conErrMsg ? <p>{conErrMsg}</p> : ""}
+              <label htmlFor="Confirm Password">Confirm Password: <span className="success">{check}</span></label>
+              {conErrMsg ? <p className="error">{conErrMsg}</p> : ""}
               {password ? (
                 <input
                   type="password"
